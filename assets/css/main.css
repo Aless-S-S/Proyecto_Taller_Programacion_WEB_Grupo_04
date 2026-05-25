@@ -276,7 +276,7 @@ body {
   background-color: var(--black-2);
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--gray);
+  border-bottom: 15px solid var(--gray);
 
   .h_2_carrusel {
     overflow: hidden;
