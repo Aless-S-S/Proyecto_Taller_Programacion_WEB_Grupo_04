@@ -10,7 +10,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth !important;
 }
 
 :root {
@@ -42,55 +42,74 @@ body {
 
 .nav {
   width: 100%;
-  border-bottom: solid 1px var(--white-2);
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom: solid 1px var(--red-border);
+  background: rgba(8, 8, 8, 0.75);
+  backdrop-filter: blur(12px);
   display: flex;
   justify-content: center;
-  .nav_padding {
+
+  .nav_contenedor {
     width: 100%;
-    margin: 0 20px;
+    max-width: 1300px;
+    margin: 0 30px;
+    padding: 15px 0;
     display: flex;
-    justify-content: center;
-    .nav_contenedor {
+    justify-content: space-between;
+    align-items: center;
+
+    .nav_izquierda {
+      display: flex;
       align-items: center;
-      padding-bottom: 10px;
+      img {
+        height: 40px;
+        width: auto;
+        display: block;
+      }
+    }
+
+    .nav_derecha {
       .nav_contenedor_rutas {
         display: flex;
-        gap: 25px;
+        gap: 30px;
         margin: 0;
-        padding: 10px;
-      }
-      .nav_contenedor_rutas li {
+        padding: 0;
         list-style: none;
-      }
-      .nav_contenedor_rutas a {
-        text-decoration: none;
-        color: var(--white);
-        font-size: 18px;
-        position: relative;
-        transition: color 0.3s ease;
-      }
 
-      .nav_contenedor_rutas a::after {
-        content: "";
-        display: block;
-        height: 2px;
-        background-color: var(--red-dark);
-        width: 100%;
-        transform: scaleX(0);
-        transform-origin: left center;
-        transition: transform 0.3s ease;
-      }
+        a {
+          text-decoration: none;
+          color: var(--white-2);
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          position: relative;
+          padding: 5px 0;
+          transition: color 0.3s ease;
+          
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            background-color: var(--red);
+            width: 100%;
+            transform: scaleX(0);
+            transform-origin: right center;
+            transition: transform 0.3s ease;
+          }
 
-      .nav_contenedor_rutas a:hover,
-      .nav_contenedor_rutas a:focus {
-        color: var(--red);
-      }
-
-      .nav_contenedor_rutas a:hover::after,
-      .nav_contenedor_rutas a:focus::after {
-        transform: scaleX(1);
+          &:hover, &:focus {
+            color: var(--white);
+            &::after {
+              transform: scaleX(1);
+              transform-origin: left center;
+            }
+          }
+        }
       }
     }
   }
@@ -98,28 +117,25 @@ body {
 
 .footer {
   width: 100%;
-  /*background: #000000;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(74, 0, 2, 0.7) 50%,
-    rgba(160, 0, 6, 0.7) 100%
-  );*/
-  .brand {
-    width: 100%;
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-  }
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(74, 0, 2, 0.9) 50%,
+    rgb(160, 0, 6) 100%
+  );
+  position: relative;
+
   .footer_container {
-    margin: 30px;
+    padding: 30px;
+    margin: 0;
+    position: relative;
+    z-index: 5;
+
     .footer_top {
       display: flex;
       margin-bottom: 20px;
       margin-top: 20px;
+
       .footer_brand {
         width: 40%;
       }
@@ -141,6 +157,7 @@ body {
           color: var(--white-2);
         }
       }
+
       .footer_social {
         width: 30%;
         .social_links {
@@ -160,15 +177,142 @@ body {
         }
       }
     }
+
     .footer_bottom {
       border-top: solid 1px var(--white-2);
       padding-top: 20px;
       text-align: center;
       font-weight: 600;
       font-size: 20px;
+      color: #ffffff;
+    }
+  }
+  .brand {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-top: -20px;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
   }
 }
 
 .hero_1 {
+  height: 85vh; 
+  width: 100%;
+  background-image: url(../../images/fondo_v1.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  position: relative;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; 
+
+  .hero_1_text {
+    width: 100%;
+    max-width: 850px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;   
+    gap: 20px; 
+
+    .h_t_intro {
+      font-family: "Orbitron", sans-serif; 
+      font-size: 3.8rem;
+      color: var(--white);
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      text-shadow: 0 0 20px var(--red-glow); 
+    }
+
+    .h_sub_intro {
+      font-size: 1.35rem;
+      color: var(--white-2);
+      max-width: 680px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+  }
+}
+
+.hero_1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 8, 0.85) 0%,
+    rgba(8, 8, 8, 0.7) 60%,
+    rgba(8, 8, 8, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.hero_1 > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero_2 {
+  height: 15vh;
+  min-height: 100px;
+  overflow: hidden;
+  background-color: var(--black-2);
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--gray);
+
+  .h_2_carrusel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: flex;
+    .carrusel_track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      gap: 60px;
+      padding-right: 60px;
+      animation: carruselInfinito 15s linear infinite;
+    }
+    img {
+      height: 80px;
+      width: auto;
+      display: block;
+    }
+
+    .carrusel_texto {
+      font-family: "Orbitron", sans-serif;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+/* ═══════════ ANIMACIÓN DEL BUCLE ═══════════ */
+@keyframes carruselInfinito {
+  0% {
+    transform: translateX(0);
+  }
+  100% {    
+    transform: translateX(-50%); 
+  }
 }
