@@ -13,6 +13,12 @@ La plataforma busca proyectar la identidad visual de la marca (rojo y negro)
 y destacar su propuesta de valor: salas multijugador privadas, ambiente seguro 
 y tecnología de última generación.
 
+## Integrantes
+
+- Jesus
+- Jesus
+- Alessandro Salazar S.
+
 ## Páginas
 
 - Nosotros
