@@ -1,0 +1,118 @@
+@import url(./main.css);
+
+.main_nosotros {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+
+  .nos_container {
+    padding: 60px 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @media (max-width: 1024px) {
+      width: 85%;
+    }
+
+    @media (max-width: 768px) {
+      width: 90%;
+      padding: 40px 0;
+      gap: 40px;
+    }
+    
+    .n_c_1,
+    .n_c_2,
+    .n_c_3 {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 24px;
+      }
+      
+      .n_c_1_img,
+      .n_c_2_img,
+      .n_c_3_img {
+        width: 45%;
+        flex-shrink: 0;
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 15px;
+          display: block;
+        }
+      }
+      
+      .n_c_1_text,
+      .n_c_2_text,
+      .n_c_3_text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        h2 {
+          font-family: "Orbitron", sans-serif;
+          font-size: 2.3rem;
+          font-weight: 900;
+          text-shadow: 0 0 15px var(--red-glow);
+          line-height: 1.2;
+
+          @media (max-width: 768px) {
+            font-size: 1.8rem;
+          }
+
+          @media (max-width: 480px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        h3 {
+          font-family: "Orbitron", sans-serif;
+          font-size: 1.4rem;
+          font-weight: 700;
+          color: var(--red);
+          margin-top: 8px;
+
+          @media (max-width: 480px) {
+            font-size: 1.2rem;
+          }
+        }
+
+        p {
+          font-size: 1.1rem;
+          color: var(--white-2);
+          line-height: 1.7;
+
+          @media (max-width: 480px) {
+            font-size: 1rem;
+          }
+        }
+
+        strong {
+          color: var(--white);
+        }
+      }
+    }
+    
+    .n_c_2 {
+      flex-direction: row-reverse;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+  }
+}

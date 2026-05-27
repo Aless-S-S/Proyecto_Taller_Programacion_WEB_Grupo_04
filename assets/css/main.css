@@ -38,6 +38,9 @@ html {
 body {
   background-image: url(../../images/bg_v1.png);
   color: var(--white);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 100%;
 }
 
 .nav {
@@ -318,7 +321,7 @@ body {
 }
 
 .hero_3 {
-  height: 70vh;
+  height: 60vh;
   background-color: var(--black-3);
   background-image: radial-gradient(var(--gray-3) 1px, transparent 1px);
   background-size: 30px 30px;
@@ -638,5 +641,67 @@ body {
 @media (max-width: 480px) {
   .footer .footer_container .footer_bottom {
     font-size: 13px;
+  }
+}
+
+.hero_4 {
+  width: 100%;
+  background-color: var(--black-2);  
+
+  .h4_container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      padding: 24px 20px;
+      gap: 20px;
+    }
+
+    .h4_texto {
+      h1 {
+        font-family: "Orbitron", sans-serif;
+        font-size: 2.8rem;
+        font-weight: 900;
+        letter-spacing: 3px;
+        color: var(--white);
+        text-align: center;
+
+        @media (max-width: 480px) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    .h4_logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+
+      @media (max-width: 480px) {
+        gap: 24px;
+      }
+
+      img {
+        height: 120px;
+        width: auto;
+        display: block;
+        filter: grayscale(100%) brightness(0.8);
+        transition: filter 0.3s ease;
+
+        &:hover {
+          filter: grayscale(0%) brightness(1);
+        }
+
+        @media (max-width: 480px) {
+          height: 45px;
+        }
+      }
+    }
   }
 }
