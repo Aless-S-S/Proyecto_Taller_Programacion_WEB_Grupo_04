@@ -339,7 +339,7 @@ body {
     display: flex;
     padding: 15px;
     gap: 35px;
-    transition: all .35s ease;
+    transition: all 0.35s ease;
     .h3_izq {
       display: flex;
       width: 65%;
@@ -351,7 +351,7 @@ body {
       display: block;
       border-radius: 15px;
     }
-    
+
     .h3_der {
       display: flex;
       width: 35%;
@@ -378,7 +378,6 @@ body {
   }
 }
 
-
 /* ═══════════ RESPONSIVIDAD ═══════════ */
 
 /* BOTON HAMBURGUESA */
@@ -391,7 +390,6 @@ body {
 
 /* RESPONSIVE NAVBAR */
 @media (max-width: 768px) {
-
   .menu_toggle {
     display: block;
   }
@@ -541,7 +539,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-
   .hero_3 .h3_container {
     width: 95%;
     gap: 24px;
@@ -553,7 +550,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   .hero_3 .h3_container {
     flex-direction: column;
 
@@ -585,7 +581,6 @@ body {
 }
 
 @media (max-width: 480px) {
-
   .hero_3 .h3_container {
     width: calc(100% - 24px);
 
@@ -639,7 +634,6 @@ body {
 .hero_4 {
   width: 100%;
   background-color: var(--black-2);  
-
   .h4_container {
     max-width: 1300px;
     margin: 0 auto;
@@ -647,8 +641,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-
+    gap: 24px;    
     @media (max-width: 768px) {
       padding: 24px 20px;
       gap: 20px;
@@ -692,6 +685,73 @@ body {
 
         @media (max-width: 480px) {
           height: 45px;
+        }
+      }
+    }
+  }
+}
+
+.hero_5 {
+  width: 100%;
+  background-color: var(--black-4);
+  .h5_container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: 768px) {
+      padding: 24px 20px;
+      gap: 20px;
+    }
+    .h5_logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      img {
+        height: 120px;
+        width: auto;
+        display: block;
+        filter: grayscale(100%) brightness(0.8);
+        transition: filter 0.3s ease;
+
+        &:hover {
+          filter: grayscale(0%) brightness(1);
+        }
+
+        @media (max-width: 480px) {
+          height: 45px;
+        }
+      }
+    }
+    .h5_texto {
+      h1 {
+        font-family: "Orbitron", sans-serif;
+        font-size: 2.8rem;
+        font-weight: 900;
+        letter-spacing: 3px;
+        color: var(--white);
+        text-align: center;
+        padding-bottom: 15px;
+
+        @media (max-width: 480px) {
+          font-size: 1.3rem;
+        }
+      }
+      p {
+        font-family: "Orbitron", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 500;
+        letter-spacing: 3px;
+        color: var(--white);
+        text-align: center;
+
+        @media (max-width: 480px) {
+          font-size: 1rem;
         }
       }
     }
