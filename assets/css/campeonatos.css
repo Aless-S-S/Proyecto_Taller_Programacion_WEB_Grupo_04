@@ -127,3 +127,28 @@
   padding: 3px 10px;
   border-radius: 4px;
 }
+.camp_filtros{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-bottom:40px;
+    flex-wrap:wrap;
+}
+
+.btn_filter{
+    padding:10px 18px;
+    border:none;
+    cursor:pointer;
+    border-radius:8px;
+    background:#222;
+    color:white;
+    transition:.3s;
+}
+
+.btn_filter:hover{
+    background:#ff3131;
+}
+
+.btn_filter.active{
+    background:#ff3131;
+}
