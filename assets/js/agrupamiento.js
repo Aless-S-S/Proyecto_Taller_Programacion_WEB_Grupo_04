@@ -22,3 +22,17 @@ const whatsappButton = `
 `;
 
 document.body.insertAdjacentHTML("beforeend", whatsappButton);
+
+// Inyectar enlace al Libro de Reclamaciones en el footer
+const footerBottom = document.querySelector(".footer_bottom");
+if (footerBottom) {
+  const reclamacionesLink = `
+    <div class="libro-reclamaciones-container" style="margin-top: 15px;">
+      <a href="reclamaciones.html" target="_blank" rel="noopener noreferrer" class="libro-reclamaciones-link">
+        <img src="./images/logo_libro_reclam.png" alt="Libro de Reclamaciones" class="libro-reclamaciones-logo" />
+      </a>
+    </div>
+  `;
+  footerBottom.insertAdjacentHTML("beforeend", reclamacionesLink);
+}
+

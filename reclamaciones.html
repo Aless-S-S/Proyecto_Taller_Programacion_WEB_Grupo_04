@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/reclamaciones.css" />
+    <script
+      src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"
+      defer
+    ></script>
+    <script src="assets/js/agrupamiento.js" defer></script>
+    <script src="assets/js/scroll.js" defer></script>
+    <title>Libro de Reclamaciones - GameCenter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header class="nav">
+      <div class="nav_contenedor">
+        <div class="nav_izquierda">
+          <a href="index.html"
+            ><img src="./images/svgs/logo.svg" alt="Logo Game Center"
+          /></a>
+        </div>
+        <nav class="nav_derecha">
+          <div class="menu_toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <ul class="nav_contenedor_rutas">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="nosotros.html">NOSOTROS</a></li>
+            <li><a href="salas.html">SALAS</a></li>
+            <li><a href="promociones.html">PROMOCIONES</a></li>
+            <li><a href="galeria.html">GALERIA</a></li>
+            <li><a href="campeonatos.html">CAMPEONATOS</a></li>
+            <li><a href="contacto.html">CONTACTO</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ═══════════ FORMULARIO ═══════════ -->
+    <main class="reclamaciones-container">
+      <div class="reclamaciones-card" id="formCard">
+        <div class="reclamaciones-header">
+          <div class="reclamaciones-title-block">
+            <h1>LIBRO DE RECLAMACIONES</h1>
+            <p>Conforme a lo establecido en el Código de Protección y Defensa del Consumidor (Ley N° 29571).</p>
+          </div>
+          <div class="reclamaciones-badge-block">
+            <div class="reclamaciones-badge">
+              <span class="badge-label">Hoja de Reclamación</span>
+              <span class="badge-number" id="claimNumber">GC-2026-0000</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="reclamacionesForm" onsubmit="handleFormSubmit(event)">
+          <!-- SECCIÓN 1 -->
+          <div class="form-section">
+            <h2 class="form-section-title">1. Identificación del Consumidor</h2>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="tipoDoc">Tipo de Documento <span>*</span></label>
+                <select id="tipoDoc" class="form-control" required>
+                  <option value="DNI" selected>DNI</option>
+                  <option value="CE">Carnet de Extranjería</option>
+                  <option value="Pasaporte">Pasaporte</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="nroDoc">Número de Documento <span>*</span></label>
+                <input type="text" id="nroDoc" class="form-control" placeholder="Ej. 12345678" required pattern="[0-9A-Za-z]{8,12}" />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="nombreCompleto">Nombres y Apellidos completos <span>*</span></label>
+                <input type="text" id="nombreCompleto" class="form-control" placeholder="Nombre completo" required />
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Teléfono / Celular <span>*</span></label>
+                <input type="tel" id="telefono" class="form-control" placeholder="Ej. 987654321" required pattern="[0-9+\s-]{9,15}" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo electrónico <span>*</span></label>
+                <input type="email" id="email" class="form-control" placeholder="usuario@correo.com" required />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="direccion">Domicilio / Dirección <span>*</span></label>
+                <input type="text" id="direccion" class="form-control" placeholder="Dirección completa" required />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="apoderado">Nombre del Apoderado (en caso de ser menor de edad)</label>
+                <input type="text" id="apoderado" class="form-control" placeholder="Nombre del apoderado y parentesco" />
+              </div>
+            </div>
+          </div>
+
+          <!-- SECCIÓN 2 -->
+          <div class="form-section">
+            <h2 class="form-section-title">2. Identificación del Bien Contratado</h2>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label>Tipo de Bien <span>*</span></label>
+                <div class="radio-group">
+                  <label class="radio-option">
+                    <input type="radio" name="tipoBien" value="Producto" required checked />
+                    Producto (Consolas, controles, periféricos)
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="tipoBien" value="Servicio" required />
+                    Servicio (Alquiler de sala, suscripción)
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="monto">Monto reclamado (S/.) <span>*</span></label>
+                <input type="number" step="0.10" id="monto" class="form-control" placeholder="0.00" required min="0" />
+              </div>
+
+              <div class="form-group full-width">
+                <label for="descripcionBien">Descripción del bien contratado <span>*</span></label>
+                <textarea id="descripcionBien" class="form-control" placeholder="Detalle qué producto o servicio adquirió..." required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECCIÓN 3 -->
+          <div class="form-section">
+            <h2 class="form-section-title">3. Detalle de la Reclamación</h2>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label>Tipo de Reclamación <span>*</span></label>
+                <div class="radio-group">
+                  <label class="radio-option">
+                    <input type="radio" name="tipoReclamacion" value="Reclamo" required checked />
+                    Reclamo (Disconformidad con el producto/servicio)
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="tipoReclamacion" value="Queja" required />
+                    Queja (Malestar sobre la atención o servicio general)
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="detalleReclamacion">Detalle de la reclamación (Queja o Reclamo) <span>*</span></label>
+                <textarea id="detalleReclamacion" class="form-control" placeholder="Escriba aquí detalladamente lo ocurrido..." required></textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="pedidoConsumidor">Pedido concreto del consumidor <span>*</span></label>
+                <textarea id="pedidoConsumidor" class="form-control" placeholder="¿Cuál es su solicitud o solución esperada?" required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <label class="checkbox-option">
+              <input type="checkbox" id="declaracion" required />
+              Declaro ser el titular del reclamo o queja y que los datos registrados son verdaderos.
+            </label>
+          </div>
+
+          <!-- BOTONES -->
+          <div class="form-actions">
+            <button type="button" class="btn-secondary" onclick="window.close();">Cancelar</button>
+            <button type="submit" class="btn-primary">Enviar Reclamo</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- VISTA DE ÉXITO (Oculta por defecto) -->
+      <div class="reclamaciones-card success-card" id="successCard" style="display: none;">
+        <div class="success-icon-wrapper">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h2>¡Reclamo Registrado con Éxito!</h2>
+        <p>Tu hoja de reclamación ha sido registrada formalmente en nuestro sistema. Según las regulaciones vigentes, daremos respuesta a tu reclamo en un plazo máximo de 15 días hábiles.</p>
+        
+        <div class="success-details">
+          <div><strong>Código de Registro:</strong> <span id="resClaimNumber"></span></div>
+          <div><strong>Fecha de Registro:</strong> <span id="resDate"></span></div>
+          <div><strong>Consumidor:</strong> <span id="resName"></span></div>
+          <div><strong>Tipo:</strong> <span id="resType"></span></div>
+        </div>
+
+        <div class="success-actions">
+          <button class="btn-secondary" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimir Copia</button>
+          <button class="btn-primary" onclick="window.close()"><i class="fa-solid fa-circle-xmark"></i> Cerrar Ventana</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="footer">
+      <div class="footer_container">
+        <div class="footer_top">
+          <div class="footer_brand">
+            <h1>GAME CENTER</h1>
+          </div>
+
+          <div class="footer_nav">
+            <h2>Navegación</h2>
+            <div class="f_nav_rutas">
+              <a href="index.html">INICIO</a>
+              <a href="nosotros.html">NOSOTROS</a>
+              <a href="salas.html">SALAS</a>
+              <a href="promociones.html">PROMOCIONES</a>
+              <a href="galeria.html">GALERIA</a>
+              <a href="campeonatos.html">CAMPEONATOS</a>
+              <a href="contacto.html">CONTACTO</a>
+            </div>
+          </div>
+
+          <div class="footer_social">
+            <h2>Redes Sociales</h2>
+            <div class="social_links">
+              <a href="https://www.facebook.com/share/1PWC5sHtrt/" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a href="https://www.tiktok.com/@gamecenterchiclayo?_r=1&_t=ZS-96dxiSJsdGP" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer_bottom">
+          <p>&copy; 2026 Game Center — Todos los derechos reservados</p>
+          <p>Hecho con pasión para la comunidad gamer</p>
+        </div>
+      </div>
+      <div class="brand">
+        <img src="./images/svgs/gamecenter.svg" alt="Game Center" />
+      </div>
+    </footer>
+
+    <!-- ═══════════ SCRIPT FORMULARIO ═══════════ -->
+    <script>
+      // Generar número correlativo aleatorio al cargar la página
+      document.addEventListener("DOMContentLoaded", () => {
+        const date = new Date();
+        const year = date.getFullYear();
+        const randomNum = Math.floor(1000 + Math.random() * 9000); // 4 dígitos aleatorios
+        const formattedNum = `GC-${year}-${randomNum}`;
+        
+        document.getElementById("claimNumber").innerText = formattedNum;
+      });
+
+      // Manejar el submit
+      function handleFormSubmit(event) {
+        event.preventDefault();
+
+        const claimNum = document.getElementById("claimNumber").innerText;
+        const nombre = document.getElementById("nombreCompleto").value;
+        const tipoReclamacion = document.querySelector('input[name="tipoReclamacion"]:checked').value;
+        const dateStr = new Date().toLocaleDateString('es-PE', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+
+        // Llenar datos de éxito
+        document.getElementById("resClaimNumber").innerText = claimNum;
+        document.getElementById("resDate").innerText = dateStr;
+        document.getElementById("resName").innerText = nombre;
+        document.getElementById("resType").innerText = tipoReclamacion;
+
+        // Ocultar formulario y mostrar éxito con animación
+        const formCard = document.getElementById("formCard");
+        const successCard = document.getElementById("successCard");
+
+        formCard.style.display = "none";
+        successCard.style.display = "block";
+        
+        // Desplazarse al inicio de la tarjeta de éxito
+        successCard.scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
