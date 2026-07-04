@@ -221,6 +221,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 80px;
+  overflow: hidden; /* Evitar scroll por los rayos rotativos */
 
   .hero_1_text {
     width: 100%;
@@ -232,6 +233,8 @@ body {
     align-items: center;
     text-align: center;
     gap: 20px;
+    position: relative;
+    z-index: 3;
 
     .h_t_intro {
       font-family: "Orbitron", sans-serif;
@@ -255,6 +258,41 @@ body {
   }
 }
 
+.hero_1::before {
+  content: "";
+  position: absolute;
+  top: -67.5%;
+  left: -67.5%;
+  width: 235%;
+  height: 235%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0%,
+    rgba(232, 0, 10, 0) 4%,
+    rgba(232, 0, 10, 0.22) 8%,
+    rgba(232, 0, 10, 0.42) 10%,
+    rgba(232, 0, 10, 0.22) 12%,
+    rgba(232, 0, 10, 0) 16%,
+    transparent 30%,
+    rgba(232, 0, 10, 0) 40%,
+    rgba(232, 0, 10, 0.16) 44%,
+    rgba(232, 0, 10, 0.32) 46%,
+    rgba(232, 0, 10, 0.16) 48%,
+    rgba(232, 0, 10, 0) 52%,
+    transparent 70%,
+    rgba(232, 0, 10, 0) 78%,
+    rgba(232, 0, 10, 0.22) 82%,
+    rgba(232, 0, 10, 0.42) 84%,
+    rgba(232, 0, 10, 0.22) 86%,
+    rgba(232, 0, 10, 0) 90%,
+    transparent 100%
+  );
+  animation: hero-rays-rotate 25s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
 .hero_1::after {
   content: "";
   position: absolute;
@@ -262,18 +300,33 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    #080808d9 0%,
-    #080808b3 60%,
-    #08080899 100%
+  background: radial-gradient(
+    circle at center,
+    rgba(8, 8, 8, 0.2) 0%,
+    rgba(8, 8, 8, 0.6) 60%,
+    #080808 100%
   );
-  z-index: 1;
+  z-index: 2;
+}
+
+@keyframes hero-rays-rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.05);
+    opacity: 0.95;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.7;
+  }
 }
 
 .hero_1 > * {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .hero_2 {
