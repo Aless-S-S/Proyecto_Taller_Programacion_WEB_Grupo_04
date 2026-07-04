@@ -23,9 +23,9 @@ const whatsappButton = `
 
 document.body.insertAdjacentHTML("beforeend", whatsappButton);
 
-// Inyectar enlace al Libro de Reclamaciones en el footer
-const footerBottom = document.querySelector(".footer_bottom");
-if (footerBottom) {
+// Inyectar enlace al Libro de Reclamaciones en el footer (debajo de GAME CENTER)
+const footerBrand = document.querySelector(".footer_brand");
+if (footerBrand) {
   const reclamacionesLink = `
     <div class="libro-reclamaciones-container" style="margin-top: 15px;">
       <a href="reclamaciones.html" target="_blank" rel="noopener noreferrer" class="libro-reclamaciones-link">
@@ -33,6 +33,7 @@ if (footerBottom) {
       </a>
     </div>
   `;
-  footerBottom.insertAdjacentHTML("beforeend", reclamacionesLink);
+  footerBrand.insertAdjacentHTML("beforeend", reclamacionesLink);
 }
+
 
