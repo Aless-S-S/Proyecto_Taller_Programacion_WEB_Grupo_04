@@ -234,7 +234,7 @@ body {
     text-align: center;
     gap: 20px;
     position: relative;
-    z-index: 3;
+    z-index: 4;
 
     .h_t_intro {
       font-family: "Orbitron", sans-serif;
@@ -288,7 +288,7 @@ body {
     transparent 100%
   );
   animation: hero-rays-rotate 25s linear infinite;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   mix-blend-mode: screen;
 }
@@ -306,7 +306,7 @@ body {
     rgba(8, 8, 8, 0.6) 60%,
     #080808 100%
   );
-  z-index: 2;
+  z-index: 3;
 }
 
 @keyframes hero-rays-rotate {
@@ -326,7 +326,39 @@ body {
 
 .hero_1 > * {
   position: relative;
-  z-index: 3;
+  z-index: 4;
+}
+
+/* Contenedor del video de YouTube en el fondo */
+.hero_video_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1 !important; /* Fuerza a estar por detrás de los pseudo-elementos y el texto */
+  pointer-events: none;
+}
+
+.hero_video_container iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* Relación de aspecto 16:9 (100 * 9 / 16) */
+  min-height: 100vh;
+  min-width: 177.77vh; /* Relación de aspecto 16:9 (100 * 16 / 9) */
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: none;
+  opacity: 0;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Transición premium suave al cargarse */
+.hero_video_container.loaded iframe {
+  opacity: 0.6; /* 60% de opacidad para que se mezcle con los rayos y mantenga una legibilidad óptima del texto */
 }
 
 .hero_2 {
