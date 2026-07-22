@@ -67,15 +67,17 @@
     </div>
   </header>
 
-  <main class="hero_1">
-    <div class="hero_1_text">
-      <h1>SALAS MULTIPLAYER</h1>
-      <p>Disponemos con 8 salas privadas con consolas de PlayStation 5 diseñadas para grupos de 4 a 6 personas y una
-        sala principal con 8 consolas de PlayStation 4.</p>
-      <p>Juega con tus amigos en un ambiente cómodo y acogedor, como si estuvieras en la sala de tu casa, sin filtros ni
-        interrupciones</p>
-    </div>
-  </main>
+<section class="hero_1">
+      <div class="hero_1_text">
+        <h1>NUESTRAS SALAS</h1>
+        <p>
+          Vive una experiencia gamer única junto a tus amigos.
+          Contamos con salas equipadas con PlayStation 4 y
+          PlayStation 5 para que disfrutes los mejores títulos
+          en un ambiente cómodo, moderno y seguro.
+        </p>
+      </div>
+    </section>
 
   <section class="hero_2">
     <div class="h_2_carrusel">
@@ -119,54 +121,78 @@
       </div>
     </div>
   </section>
+<!-- ================= GRID DE SALAS ================= -->
+    <section class="salas_grid">
 
-  <div class="salas_container">
-    <div class="sala_principal">
-      <h1>Sala Principal</h1>
-      <img src="images/SalaPrincipal.jpg" alt="">
-    </div>
-
-    <div class="salas_privadas">
-      <h1>Salas Privadas</h1>
-      <div class="galeria_privadas">
-
-        <div class="sala_privada">
-          <img src="images/salasPrivadas/salapriv1.jpg" alt="">
+      <!-- SALA PS4 -->
+      <article class="sala_card">
+        <div class="sala_card_imagenes">
+          <img class="img_principal" src="images/SalaPrincipal.jpg" alt="Sala PlayStation 4">
+          <div class="img_miniaturas">
+            <img src="images/salasPrivadas/salapriv1.jpg" alt="Sala PS4 vista 2">
+            <img src="images/salasPrivadas/salapriv2.jpg" alt="Sala PS4 vista 3">
+          </div>
         </div>
 
-        <div class="sala_privada">
-          <img src="images/salasPrivadas/salapriv2.jpg" alt="">
+        <div class="sala_card_body">
+          <span class="tipo">SALA NORMAL</span>
+          <h2>PlayStation 4</h2>
+          <p class="descripcion">
+            Nuestra sala PlayStation 4 es perfecta para disfrutar partidas
+            casuales con amigos o familia. Cuenta con un ambiente cómodo,
+            televisión Full HD y controles inalámbricos.
+          </p>
+
+          <ul class="caracteristicas">
+            <li>🎮 Consola PlayStation 4</li>
+            <li>👥 Hasta 3 jugadores</li>
+            <li>🛋️ Ambiente cómodo</li>
+            <li>📺 Pantalla Full HD</li>
+            <li>🎧 Excelente sonido</li>
+          </ul>
+
+          <div class="precio">
+            <span>Precio</span>
+            <h3>S/ 5.00 <small>/ hora</small></h3>
+          </div>
+        </div>
+      </article>
+
+<!-- SALA PS5 -->
+      <article class="sala_card">
+        <div class="sala_card_imagenes">
+          <img class="img_principal" src="images/salasPrivadas/salapriv3.jpg" alt="Sala PlayStation 5">
+          <div class="img_miniaturas">
+            <img src="images/salasPrivadas/salapriv4.jpg" alt="Sala PS5 vista 2">
+            <img src="images/salasPrivadas/salapriv5.jpg" alt="Sala PS5 vista 3">
+          </div>
         </div>
 
-        <div class="sala_privada">
-          <img src="images/salasPrivadas/salapriv3.jpg" alt="">
+        <div class="sala_card_body">
+          <span class="tipo">SALA NORMAL</span>
+          <h2>PlayStation 5</h2>
+          <p class="descripcion">
+            Disfruta la nueva generación con tiempos de carga ultrarrápidos,
+            gráficos sorprendentes y una experiencia inmersiva gracias al
+            control DualSense.
+          </p>
+
+          <ul class="caracteristicas">
+            <li>⚡ Consola PlayStation 5</li>
+            <li>👥 Hasta 3 jugadores</li>
+            <li>🎮 Control DualSense</li>
+            <li>📺 Pantalla Full HD</li>
+            <li>🔊 Audio envolvente</li>
+          </ul>
+
+          <div class="precio">
+            <span>Precio</span>
+            <h3>S/ 6.00 <small>/ hora</small></h3>
+          </div>
         </div>
+      </article>
 
-        <div class="sala_privada">
-          <img src="images/salasPrivadas/salapriv4.jpg" alt="">
-        </div>
-
-        <div class="sala_privada">
-          <img src="images/salasPrivadas/salapriv5.jpg" alt="">
-        </div>
-
-        <div class="sala_privada">
-          <img src="images/salasPrivadas/salapriv6.jpg" alt="">
-        </div>
-
-        <div class="sala_privada">
-          <img src="images/salasPrivadas/salapriv7.jpg" alt="">
-        </div>
-
-        <div class="sala_privada">
-          <img src="images/salasPrivadas/salapriv8.jpg" alt="">
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-<section class="hero_2">
+  <section class="hero_2">
     <div class="h_2_carrusel">
       <div class="carrusel_track">
         <img src="./images/svgs/cropped-logo.svg" alt="Logo" />
