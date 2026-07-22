@@ -343,7 +343,7 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(180deg, var(--black-2) 0%, #4a0002 100%);
+  background: linear-gradient(180deg, var(--black) 0%, #4a0002 100%);
 }
 
 .pt_cta_container {
