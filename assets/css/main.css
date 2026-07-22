@@ -1201,5 +1201,190 @@ body {
   display: block;
 }
 
-
-
+/*
+HERO_9
+*/
+.hero_9 {
+  position: relative;
+  overflow: hidden;
+ 
+  background-color: var(--black-2);
+  background-image:
+    linear-gradient(var(--red-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--red-border) 1px, transparent 1px),
+    linear-gradient(rgba(232, 0, 10, 0.15) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, rgba(232, 0, 10, 0.15) 0.5px, transparent 0.5px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  background-position: -1px -1px, -1px -1px, -0.5px -0.5px, -0.5px -0.5px;
+  animation: hero9GridMove 22s linear infinite;
+ 
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+ 
+.hero_9::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, transparent 0%, var(--black-2) 75%);
+  pointer-events: none;
+}
+ 
+@keyframes hero9GridMove {
+  0% {
+    background-position: -1px -1px, -1px -1px, -0.5px -0.5px, -0.5px -0.5px;
+  }
+  100% {
+    background-position: 49px 49px, 49px 49px, 9.5px 9.5px, 9.5px 9.5px;
+  }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .hero_9 {
+    animation: none;
+  }
+}
+ 
+.hero_9 .h9_container {
+  position: relative;
+  z-index: 1;
+ 
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+ 
+.hero_9 .h9_badge {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--red);
+  background: var(--red-tint);
+  border: 1px solid var(--red-border);
+  padding: 8px 20px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+ 
+.hero_9 .h9_titulo {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--white);  
+  margin-bottom: 20px;
+}
+ 
+.hero_9 .h9_sub {
+  font-size: clamp(1rem, 1.6vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--white-2);
+  max-width: 620px;
+  margin-bottom: 60px;
+}
+ 
+.hero_9 .h9_sub strong {
+  color: var(--red);
+}
+ 
+.hero_9 .h9_pasos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 56px;
+}
+ 
+.hero_9 .h9_paso {
+  padding: 32px 20px;
+  border: 1px solid var(--red-border);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  transition: all 0.35s ease;
+}
+ 
+.hero_9 .h9_paso:hover {
+  border-color: var(--red);
+  box-shadow: 0 0 30px var(--red-glow);
+  transform: translateY(-4px);
+}
+ 
+.hero_9 .h9_paso_icono {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--red-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--red);
+}
+ 
+.hero_9 .h9_paso h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+ 
+.hero_9 .h9_paso p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+ 
+.hero_9 .h9_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 48px;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: var(--white);
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-radius: 100px;
+  box-shadow: 0 0 30px var(--red-glow), 0 10px 30px #00000073;
+  transition: all 0.35s ease;
+}
+ 
+.hero_9 .h9_btn i {
+  font-size: 0.9rem;
+}
+ 
+.hero_9 .h9_btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 50px var(--red-glow), 0 15px 40px #000000a6;
+}
+ 
+@media (max-width: 768px) {
+  .hero_9 .h9_pasos {
+    grid-template-columns: 1fr;
+  }
+  .hero_9 .h9_titulo {
+    font-size: 2.4rem;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .hero_9 {
+    padding: 60px 16px;
+  }
+ 
+  .hero_9 .h9_btn {
+    width: 100%;
+    justify-content: center;
+    padding: 18px 24px;
+  }
+}
