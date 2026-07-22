@@ -1,0 +1,407 @@
+/* ==========================================================================
+   PRETTI — PÁGINA DE RECOMPENSAS
+   Este archivo asume que main.css ya está cargado (variables :root, fuentes,
+   nav, footer). Cárgalo después de main.css en el <head> de pretti.html.
+   ========================================================================== */
+
+/* ─────────── PRETTI 1 · HERO ─────────── */
+.pt_hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 90vh;
+  padding: 160px 20px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  background-image:
+    linear-gradient(var(--red-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--red-border) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: -1px -1px;
+}
+
+.pt_hero_glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  max-width: 140vw;
+  background: radial-gradient(circle, var(--red-glow) 0%, transparent 65%);
+  opacity: 0.35;
+  filter: blur(10px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pt_hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 30%, transparent 0%, var(--black) 80%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pt_hero_container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 26px;
+}
+
+.pt_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--red);
+  background: var(--red-tint);
+  border: 1px solid var(--red-border);
+  padding: 10px 22px;
+  border-radius: 100px;
+}
+
+.pt_hero_titulo {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: var(--white);
+  text-shadow: 0 0 30px var(--red-glow);
+}
+
+.pt_hero_sub {
+  max-width: 640px;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.7;
+  color: var(--white-2);
+}
+
+.pt_hero_sub strong {
+  color: var(--red);
+}
+
+.pt_hero_cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+/* ─────────── BOTONES REUTILIZABLES ─────────── */
+.pt_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 44px;
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: var(--white);
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-decoration: none;
+  border-radius: 100px;
+  box-shadow: 0 0 30px var(--red-glow), 0 10px 30px #00000073;
+  transition: all 0.35s ease;
+}
+
+.pt_btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 50px var(--red-glow), 0 15px 40px #000000a6;
+}
+
+.pt_btn_ghost {
+  background: transparent;
+  color: var(--white-2);
+  border: 1px solid var(--red-border);
+  box-shadow: none;
+}
+
+.pt_btn_ghost:hover {
+  color: var(--white);
+  border-color: var(--red);
+  box-shadow: 0 0 25px var(--red-glow);
+}
+
+/* ─────────── TÍTULOS DE SECCIÓN (compartidos) ─────────── */
+.pt_eyebrow {
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--red);
+  margin-bottom: 14px;
+}
+
+.pt_titulo_seccion {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+/* ─────────── PRETTI 2 · CÓMO FUNCIONA ─────────── */
+.pt_como {
+  background: var(--black-2);
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.pt_como_container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pt_pasos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.pt_paso {
+  position: relative;
+  padding: 36px 24px 30px;
+  border: 1px solid var(--red-border);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  transition: all 0.35s ease;
+  text-align: center;
+}
+
+.pt_paso:hover {
+  border-color: var(--red);
+  box-shadow: 0 0 30px var(--red-glow);
+  transform: translateY(-4px);
+}
+
+.pt_paso_num {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+}
+
+.pt_paso_icono {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: var(--red-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--red);
+}
+
+.pt_paso h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.pt_paso p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ─────────── PRETTI 3 · TABLA DE CANJES ─────────── */
+.pt_canjes {
+  background: var(--black);
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.pt_canjes_container {
+  width: 100%;
+  max-width: 1150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pt_canjes_sub {
+  font-size: 1.05rem;
+  color: var(--white-2);
+  max-width: 560px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+.pt_canjes_grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.pt_canje_card {
+  position: relative;
+  padding: 34px 20px;
+  border: 1px solid var(--gray-2);
+  background: var(--black-3);
+  border-radius: 16px;
+  transition: all 0.35s ease;
+}
+
+.pt_canje_card:hover {
+  border-color: var(--red);
+  box-shadow: 0 0 30px var(--red-glow);
+  transform: translateY(-4px);
+}
+
+.pt_canje_destacada {
+  border-color: var(--red);
+  background: linear-gradient(180deg, var(--red-tint), var(--black-3) 60%);
+  box-shadow: 0 0 25px var(--red-glow);
+}
+
+.pt_canje_tag {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  color: var(--white);
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.pt_canje_icono {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: var(--red-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--red);
+}
+
+.pt_canje_card h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.pt_canje_reward {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--white-2);
+  text-transform: uppercase;
+}
+
+/* ─────────── PRETTI 4 · CTA FINAL ─────────── */
+.pt_cta {
+  position: relative;
+  overflow: hidden;
+  padding: 110px 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, var(--black-2) 0%, #4a0002 100%);
+}
+
+.pt_cta_container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.pt_cta h2 {
+  font-family: "Orbitron", sans-serif;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.25;
+  color: var(--white);
+  text-shadow: 0 0 25px var(--red-glow);
+}
+
+.pt_cta p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--white-2);
+}
+
+/* ─────────── RESPONSIVE ─────────── */
+@media (max-width: 900px) {
+  .pt_canjes_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pt_pasos {
+    grid-template-columns: 1fr;
+  }
+
+  .pt_hero {
+    padding: 140px 20px 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pt_canjes_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pt_hero_cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .pt_btn,
+  .pt_btn_ghost {
+    width: 100%;
+    justify-content: center;
+  }
+}
