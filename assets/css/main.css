@@ -1276,8 +1276,7 @@ HERO_9
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 900;
   letter-spacing: 4px;
-  color: var(--white);
-  text-shadow: 0 0 40px var(--red-glow);
+  color: var(--white);  
   margin-bottom: 20px;
 }
  
