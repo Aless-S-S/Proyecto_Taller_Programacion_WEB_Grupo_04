@@ -1,16 +1,4 @@
-:root {
-  --gc-bg: #0d0d12;
-  --gc-bg-alt: #16161e;
-  --gc-card: #1b1b26;
-  --gc-border: #2a2a38;
-  --gc-text: #e9e9f0;
-  --gc-text-muted: #9a9aab;
-  --gc-primary: #7c5cff;
-  --gc-primary-dark: #5b3fd9;
-  --gc-vip: #ffb020;
-  --gc-premium: #ff4d8d;
-  --radius: 16px;
-}
+@import url('./main.css');
 
 
 .salas_grid {
@@ -24,40 +12,39 @@
 }
 
 .sala_card {
-  background: var(--gc-card);
-  border: 1px solid var(--gc-border);
-  border-radius: var(--radius);
+  background: var(--black-3);
+  border: 1px solid var(--gray);
+  border-radius: 16px;
   display: flex;
   overflow: hidden;
   flex-direction: column;
   flex: 1 1 480px;
-  min-width: 480px; 
+  min-width: 480px;
   max-width: 600px;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .sala_card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px #7c5cff40;
-  border-color: var(--gc-primary);
+  box-shadow: 0 12px 30px var(--red-glow);
+  border-color: var(--red);
 }
 
 .sala_card.destacada {
-  border-color: var(--gc-vip);
+  border-color: var(--red-dark);
 }
 
 .sala_card.destacada:hover {
-  box-shadow: 0 12px 30px #ffb02040;
+  box-shadow: 0 12px 30px #a000068c;
 }
 
 .sala_card.premium {
-  border-color: var(--gc-premium);
+  border-color: var(--white-2);
 }
 
 .sala_card.premium:hover {
-  box-shadow: 0 12px 30px #ff4d8d40;
+  box-shadow: 0 12px 30px #c8c8c840;
 }
-
 
 .sala_card_imagenes {
   position: relative;
@@ -89,7 +76,7 @@
   height: 46px;
   object-fit: cover;
   border-radius: 8px;
-  border: 2px solid #ffffffd9;
+  border: 2px solid #f0f0f0d9;
   box-shadow: 0 2px 8px #00000066;
 }
 
@@ -105,34 +92,34 @@
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: var(--gc-primary);
-  background: #7c5cff1f;
-  border: 1px solid var(--gc-primary);
+  color: var(--red);
+  background: var(--red-tint);
+  border: 1px solid var(--red);
   padding: 0.25rem 0.6rem;
   border-radius: 999px;
   margin-bottom: 0.75rem;
 }
 
 .tipo.vip {
-  color: var(--gc-vip);
-  border-color: var(--gc-vip);
-  background: #ffb0201f;
+  color: var(--red-dark);
+  border-color: var(--red-dark);
+  background: #a0000614;
 }
 
 .tipo.premium {
-  color: var(--gc-premium);
-  border-color: var(--gc-premium);
-  background: #ff4d8d1f;
+  color: var(--white-2);
+  border-color: var(--white-2);
+  background: #c8c8c81f;
 }
 
 .sala_card_body h2 {
-  color: var(--gc-text);
+  color: var(--white);
   font-size: 1.4rem;
   margin-bottom: 0.6rem;
 }
 
 .descripcion {
-  color: var(--gc-text-muted);
+  color: var(--text-muted);
   font-size: 0.92rem;
   line-height: 1.55;
   margin-bottom: 1rem;
@@ -148,14 +135,14 @@
 }
 
 .caracteristicas li {
-  color: var(--gc-text);
+  color: var(--white);
   font-size: 0.9rem;
 }
 
 .precio {
   margin-top: auto;
   padding-top: 1rem;
-  border-top: 1px dashed var(--gc-border);
+  border-top: 1px dashed var(--gray);
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -163,35 +150,34 @@
 
 .precio span {
   font-size: 0.8rem;
-  color: var(--gc-text-muted);
+  color: var(--text-muted);
 }
 
 .precio h3 {
-  color: var(--gc-primary);
+  color: var(--red);
   font-size: 1.5rem;
 }
 
 .precio h3 small {
   font-size: 0.75rem;
-  color: var(--gc-text-muted);
+  color: var(--text-muted);
   font-weight: 400;
 }
 
-.sala_card.destacada .precio h3 { color: var(--gc-vip); }
-.sala_card.premium .precio h3 { color: var(--gc-premium); }
+.sala_card.destacada .precio h3 { color: var(--red-dark); }
+.sala_card.premium .precio h3 { color: var(--white-2); }
 
 .extra {
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
   font-size: 0.85rem;
-  color: var(--gc-text-muted);
+  color: var(--text-muted);
 }
 
 .extra strong {
-  color: var(--gc-text);
+  color: var(--white);
 }
-
 
 .informacion {
   max-width: 1100px;
@@ -201,7 +187,7 @@
 
 .informacion h2 {
   text-align: center;
-  color: var(--gc-text);
+  color: var(--white);
   margin-bottom: 1.5rem;
 }
 
@@ -213,9 +199,9 @@
 }
 
 .info_card {
-  background: var(--gc-card);
-  border: 1px solid var(--gc-border);
-  border-radius: var(--radius);
+  background: var(--black-3);
+  border: 1px solid var(--gray);
+  border-radius: 16px;
   padding: 1.5rem;
   text-align: center;
   flex: 1 1 240px;
@@ -223,12 +209,12 @@
 }
 
 .info_card h3 {
-  color: var(--gc-text);
+  color: var(--white);
   margin-bottom: 0.6rem;
 }
 
 .info_card p {
-  color: var(--gc-text-muted);
+  color: var(--text-muted);
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -236,7 +222,7 @@
 .info_card span {
   display: inline-block;
   margin-top: 0.6rem;
-  color: var(--gc-primary);
+  color: var(--red);
   font-weight: 700;
 }
 
