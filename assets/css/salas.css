@@ -35,7 +35,7 @@
 }
 
 .sala_card.destacada:hover {
-  box-shadow: 0 12px 30px #a000068c;
+  box-shadow: 0 12px 30px var(--red-dark);
 }
 
 .sala_card.premium {
@@ -43,7 +43,7 @@
 }
 
 .sala_card.premium:hover {
-  box-shadow: 0 12px 30px #c8c8c840;
+  box-shadow: 0 12px 30px var(--white-2);
 }
 
 .sala_card_imagenes {
@@ -76,8 +76,8 @@
   height: 46px;
   object-fit: cover;
   border-radius: 8px;
-  border: 2px solid #f0f0f0d9;
-  box-shadow: 0 2px 8px #00000066;
+  border: 2px solid var(--white);
+  box-shadow: 0 2px 8px var(--black);
 }
 
 .sala_card_body {
@@ -100,17 +100,12 @@
   margin-bottom: 0.75rem;
 }
 
-.tipo.vip {
+.tipo.vip, .tipo.premium  {
   color: var(--red-dark);
   border-color: var(--red-dark);
-  background: #a0000614;
+  background: var(--red-tint);
 }
 
-.tipo.premium {
-  color: var(--white-2);
-  border-color: var(--white-2);
-  background: #c8c8c81f;
-}
 
 .sala_card_body h2 {
   color: var(--white);
@@ -139,6 +134,13 @@
   font-size: 0.9rem;
 }
 
+.caracteristicas i {
+  color: var(--red);
+  margin-right: 6px;
+  width: 18px;
+  text-align: center;
+}
+
 .precio {
   margin-top: auto;
   padding-top: 1rem;
@@ -164,15 +166,15 @@
   font-weight: 400;
 }
 
-.sala_card.destacada .precio h3 { color: var(--red-dark); }
-.sala_card.premium .precio h3 { color: var(--white-2); }
+.sala_card.destacada .precio h3, .sala_card.premium .precio h3 { 
+  color: var(--red-dark); 
+}
 
 .extra {
   margin-top: 0.75rem;
   display: flex;
   justify-content: space-between;
   font-size: 0.85rem;
-  color: var(--text-muted);
 }
 
 .extra strong {
