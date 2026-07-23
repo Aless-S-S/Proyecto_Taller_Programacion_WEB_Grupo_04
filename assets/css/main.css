@@ -1388,3 +1388,130 @@ HERO_9
     padding: 18px 24px;
   }
 }
+
+/*==================== OPINIONES ====================*/
+
+.opiniones{
+
+    padding: 90px 8%;
+
+    background:
+        linear-gradient(rgba(120,0,0,0.65), rgba(120,0,0,0.65)),
+        url("../../images/clientes/FALLOUT\ FONDO.avif");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+.titulo_opiniones{
+
+    text-align:center;
+    margin-bottom:25px;
+
+}
+
+.titulo_opiniones h2{
+
+    color: #ff0000;
+    font-size:42px;
+
+}
+
+.titulo_opiniones p{
+
+    color:#cfcfcf;
+    margin-top:10px;
+
+}
+
+.calificacion_general{
+
+    text-align:center;
+    margin-bottom:50px;
+
+}
+
+.calificacion_general h3{
+
+    color:#FFD700;
+    font-size:35px;
+
+}
+
+.calificacion_general span{
+
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+
+}
+
+.calificacion_general p{
+
+    color:#cfcfcf;
+
+}
+
+.contenedor_opiniones{
+
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+
+}
+
+.card_opinion{
+
+    width:320px;
+    background:#1d1d1d;
+    border:2px solid #ff0000;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    transition:.4s;
+
+}
+
+.card_opinion:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 0 25px #ff000066;
+
+}
+
+.card_opinion img{
+
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #ad4a4a;
+
+}
+
+.card_opinion h3{
+
+    color:white;
+    margin-top:15px;
+
+}
+
+.estrellas{
+
+    color:#FFD700;
+    font-size:24px;
+    margin:12px 0;
+
+}
+
+.card_opinion p{
+
+    color:#ddd;
+    line-height:1.6;
+
+}
